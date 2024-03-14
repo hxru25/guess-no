@@ -31,6 +31,10 @@ const App = () => {
   const remainingAttempts = maxCount - count;
 
   const handleGuess = (value) => {
+    if (!value) {
+      setMessage("Please enter a number.");
+      return;
+    }
     const guessNum = parseInt(value);
     setCount(count + 1);
     if (count < maxCount && !gameOver) {
